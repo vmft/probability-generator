@@ -19,6 +19,7 @@ public class Controller {
     private static final int NUMBER_OF_BARS = 20;
 
     private static final String GAMMA_DISTRIBUTION = "Гамма-распределение";
+    //СЮДА ДОБАВИТЬ НАЗВАНИЕ СВОЕГО РАСПРЕДЛЕНИЯ
     private static final String EXPONENTIAL_DISTRIBUTION = "Экспоненциальное распределение";
 
     @FXML
@@ -44,12 +45,14 @@ public class Controller {
     @FXML
     public void initialize() {
         histogramChart.setBarGap(0);
+        histogramChart.setCategoryGap(0);
 
         sampleSizeTextField.setDisable(true);
         okButton.setDisable(true);
 
         distributionComboBox.getItems().addAll(
                 GAMMA_DISTRIBUTION,
+                // ПОТОМ ДОБАВИТЬ НАЗВАНИЕ СВОЕГО РАСПРЕДЕЛЕНИЯ СЮДА
                 EXPONENTIAL_DISTRIBUTION
         );
 
@@ -83,6 +86,7 @@ public class Controller {
                     setupHistogram(generator);
                     updateTable(generator);
                     break;
+                //И СЮДА
                 default:
                     break;
             }
@@ -99,6 +103,7 @@ public class Controller {
                 String.format("%.3f", cellData.getValue().getParamValueStat()))
         );
         theoColumn.setCellValueFactory(cellData -> new SimpleStringProperty(
+                cellData.getValue().getParamValueTheo() == null ? "" :
                 String.format("%.3f", cellData.getValue().getParamValueTheo())
         ));
     }

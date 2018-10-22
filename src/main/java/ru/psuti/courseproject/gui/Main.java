@@ -12,7 +12,6 @@ public class Main extends Application {
         primaryStage.setTitle("Генератор случайных велечин");
         FXMLLoader loader = new FXMLLoader();
         Parent rootLayout = loader.load(getClass().getResourceAsStream("/ru/psuti/courseproject/gui/sample.fxml"));
-        Controller controller = loader.getController();
         primaryStage.setResizable(false);
         primaryStage.setScene(new Scene(rootLayout));
         primaryStage.show();
