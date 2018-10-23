@@ -123,7 +123,7 @@ public class Controller {
         Map<Integer, Integer> histogramData = new HashMap<>(NUMBER_OF_BARS);
         List<Double> data = generator.getGeneratedRandomValues(sampleSize);
 
-        double boundInc = data.get(0) + data.get(data.size() - 1) / NUMBER_OF_BARS;
+        double boundInc = (data.get(data.size() - 1) - data.get(0)) / NUMBER_OF_BARS;
         double lowerBound = data.get(0);
         double upperBound = lowerBound + boundInc;
         int index = 0;
