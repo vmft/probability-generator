@@ -7,7 +7,7 @@ import java.util.List;
 public interface Generator {
     /**
      * Метод для генерации заданного количества случайных величин.
-     * @param sampleSize количество случайных велечин.
+     * @param sampleSize количество случайных величин.
      * @return список случайных величин.
      */
     List<Double> getGeneratedRandomValues(int sampleSize);
