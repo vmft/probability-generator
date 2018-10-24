@@ -9,6 +9,7 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
 import ru.psuti.courseproject.core.generator.GammaDistributionGenerator;
 import ru.psuti.courseproject.core.generator.Generator;
+import ru.psuti.courseproject.core.generator.NormalDistributionGenerator;
 import ru.psuti.courseproject.core.pojo.CalculatedDataObject;
 
 import java.util.HashMap;
@@ -19,6 +20,7 @@ public class Controller {
     private static final int NUMBER_OF_BARS = 20;
 
     private static final String GAMMA_DISTRIBUTION = "Гамма-распределение";
+    private static final String NORMAL_DISTRIBUTION = "Нормальное распределение";
     //СЮДА ДОБАВИТЬ НАЗВАНИЕ СВОЕГО РАСПРЕДЛЕНИЯ
     private static final String EXPONENTIAL_DISTRIBUTION = "Экспоненциальное распределение";
 
@@ -52,6 +54,7 @@ public class Controller {
 
         distributionComboBox.getItems().addAll(
                 GAMMA_DISTRIBUTION,
+                NORMAL_DISTRIBUTION,
                 // ПОТОМ ДОБАВИТЬ НАЗВАНИЕ СВОЕГО РАСПРЕДЕЛЕНИЯ СЮДА
                 EXPONENTIAL_DISTRIBUTION
         );
@@ -82,11 +85,16 @@ public class Controller {
         if (distributionComboBox.getValue() != null) {
             switch (distributionComboBox.getValue()) {
                 case GAMMA_DISTRIBUTION:
-                    GammaDistributionGenerator generator = new GammaDistributionGenerator();
-                    setupHistogram(generator);
-                    updateTable(generator);
+                    GammaDistributionGenerator gammaDistributionGenerator = new GammaDistributionGenerator();
+                    setupHistogram(gammaDistributionGenerator);
+                    updateTable(gammaDistributionGenerator);
                     break;
                 //И СЮДА
+                case NORMAL_DISTRIBUTION:
+                    NormalDistributionGenerator normalDistributionGenerator = new NormalDistributionGenerator();
+                    setupHistogram(normalDistributionGenerator);
+                    updateTable(normalDistributionGenerator);
+                    break;
                 default:
                     break;
             }
