@@ -6,8 +6,8 @@ import java.util.*;
 
 public class NormalDistributionGenerator implements Generator {
 
-    private List<Double> generatedRandomValues;
-    private List<CalculatedDataObject> calculatedData;
+    private List<Double> generatedRandomValues;  // Список сгенерированных случайных величин
+    private List<CalculatedDataObject> calculatedData;  // Список объектов рассчитанных величин
     private Random random = new Random();
 
     public NormalDistributionGenerator() {
