@@ -4,6 +4,9 @@ import ru.psuti.courseproject.core.pojo.CalculatedDataObject;
 
 import java.util.List;
 
+/**
+ * author chillurbrain
+ */
 public interface Generator {
     /**
      * Метод для генерации заданного количества случайных величин.

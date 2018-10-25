@@ -5,6 +5,9 @@ import ru.psuti.courseproject.core.pojo.CalculatedDataObject;
 
 import java.util.*;
 
+/**
+ * author chillurbrain
+ */
 public class GammaDistributionGenerator implements Generator {
     private static final double SHAPE = 2.0; // Форма (k)
     private static final double SCALE = 0.5; // Размер (theta)

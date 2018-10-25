@@ -1,5 +1,8 @@
 package ru.psuti.courseproject.core.pojo;
 
+/**
+ * author chillurbrain
+ */
 public class CalculatedDataObject {
     private String paramName; // Имя параметра
     private Double paramValueTheo; // Теоретическое значение
