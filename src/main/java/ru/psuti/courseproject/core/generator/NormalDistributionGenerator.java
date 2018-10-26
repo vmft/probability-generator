@@ -22,11 +22,9 @@ public class NormalDistributionGenerator implements Generator {
             generatedRandomValues.add(getPairRandomValues(0, 1).get(0));
         }
         for (int i = 0; i < sampleSize / 2; i++) {
-            //generatedRandomValues.add(random.nextGaussian());
             generatedRandomValues.addAll(getPairRandomValues(0, 1));
         }
         generatedRandomValues.sort(Double::compareTo);
-        //System.out.println(generatedRandomValues.toString());
         return generatedRandomValues;
     }
 
