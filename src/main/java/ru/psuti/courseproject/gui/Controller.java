@@ -9,6 +9,7 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
 import ru.psuti.courseproject.core.generator.GammaDistributionGenerator;
 import ru.psuti.courseproject.core.generator.Generator;
+import ru.psuti.courseproject.core.generator.LogNormalDistributionGenerator;
 import ru.psuti.courseproject.core.generator.NormalDistributionGenerator;
 import ru.psuti.courseproject.core.pojo.CalculatedDataObject;
 
@@ -21,6 +22,7 @@ public class Controller {
 
     private static final String GAMMA_DISTRIBUTION = "Гамма-распределение";
     private static final String NORMAL_DISTRIBUTION = "Нормальное распределение";
+    private static final String LOGNORMAL_DISTRIBUTION = "Лог - Нормальное распределение";
     //СЮДА ДОБАВИТЬ НАЗВАНИЕ СВОЕГО РАСПРЕДЛЕНИЯ
     private static final String EXPONENTIAL_DISTRIBUTION = "Экспоненциальное распределение";
 
@@ -55,6 +57,7 @@ public class Controller {
         distributionComboBox.getItems().addAll(
                 GAMMA_DISTRIBUTION,
                 NORMAL_DISTRIBUTION,
+                LOGNORMAL_DISTRIBUTION,
                 // ПОТОМ ДОБАВИТЬ НАЗВАНИЕ СВОЕГО РАСПРЕДЕЛЕНИЯ СЮДА
                 EXPONENTIAL_DISTRIBUTION
         );
@@ -94,6 +97,11 @@ public class Controller {
                     NormalDistributionGenerator normalDistributionGenerator = new NormalDistributionGenerator();
                     setupHistogram(normalDistributionGenerator);
                     updateTable(normalDistributionGenerator);
+                    break;
+                case LOGNORMAL_DISTRIBUTION:
+                    LogNormalDistributionGenerator logNormalDistributionGenerator = new LogNormalDistributionGenerator();
+                    setupHistogram(logNormalDistributionGenerator);
+                    updateTable(logNormalDistributionGenerator);
                     break;
                 default:
                     break;

@@ -25,9 +25,9 @@
                <children>
                   <TableView fx:id="dataTable" prefHeight="465.0" prefWidth="400.0">
                     <columns>
-                      <TableColumn fx:id="labelColumn" editable="false" prefWidth="70.0" text="Значение" />
-                      <TableColumn fx:id="theoColumn" editable="false" prefWidth="160.0" text="Теоретические" />
-                        <TableColumn fx:id="statColumn" editable="false" prefWidth="160.0" text="Статистические" />
+                      <TableColumn fx:id="labelColumn" editable="false" prefWidth="150.0" text="Значение" />
+                      <TableColumn fx:id="theoColumn" editable="false" prefWidth="120.0" text="Теоретические" />
+                        <TableColumn fx:id="statColumn" editable="false" prefWidth="120.0" text="Статистические" />
                     </columns>
                      <VBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
