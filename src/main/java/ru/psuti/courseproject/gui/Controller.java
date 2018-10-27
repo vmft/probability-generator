@@ -11,6 +11,7 @@ import ru.psuti.courseproject.core.generator.GammaDistributionGenerator;
 import ru.psuti.courseproject.core.generator.Generator;
 import ru.psuti.courseproject.core.generator.LogNormalDistributionGenerator;
 import ru.psuti.courseproject.core.generator.NormalDistributionGenerator;
+import ru.psuti.courseproject.core.generator.UniformDistributionGenerator;
 import ru.psuti.courseproject.core.pojo.CalculatedDataObject;
 
 import java.util.HashMap;
@@ -25,6 +26,7 @@ public class Controller {
     private static final String LOGNORMAL_DISTRIBUTION = "Лог - Нормальное распределение";
     //СЮДА ДОБАВИТЬ НАЗВАНИЕ СВОЕГО РАСПРЕДЛЕНИЯ
     private static final String EXPONENTIAL_DISTRIBUTION = "Экспоненциальное распределение";
+    private static final String UNIFORM_DISTRIBUTION = "Равномерное распределение";
 
     @FXML
     private Button okButton;
@@ -59,7 +61,8 @@ public class Controller {
                 NORMAL_DISTRIBUTION,
                 LOGNORMAL_DISTRIBUTION,
                 // ПОТОМ ДОБАВИТЬ НАЗВАНИЕ СВОЕГО РАСПРЕДЕЛЕНИЯ СЮДА
-                EXPONENTIAL_DISTRIBUTION
+                EXPONENTIAL_DISTRIBUTION,
+                UNIFORM_DISTRIBUTION
         );
 
 
@@ -102,6 +105,11 @@ public class Controller {
                     LogNormalDistributionGenerator logNormalDistributionGenerator = new LogNormalDistributionGenerator();
                     setupHistogram(logNormalDistributionGenerator);
                     updateTable(logNormalDistributionGenerator);
+                    break;
+                case UNIFORM_DISTRIBUTION:
+                    UniformDistributionGenerator uniformDistributionGenerator = new UniformDistributionGenerator();
+                    setupHistogram(uniformDistributionGenerator);
+                    updateTable(uniformDistributionGenerator);
                     break;
                 default:
                     break;
