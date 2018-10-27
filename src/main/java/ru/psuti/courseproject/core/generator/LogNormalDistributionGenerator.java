@@ -59,13 +59,13 @@ public class LogNormalDistributionGenerator implements Generator {
         double chi2 = getChi2();
 
 
-        calculatedData.add(new CalculatedDataObject("Начальный момент a1", a1Theo, a1Stat));
-        calculatedData.add(new CalculatedDataObject("Центральный момент m2", m2Theo, m2Stat));
-        calculatedData.add(new CalculatedDataObject("Центральный момент m3", m3Theo, m3Stat));
-        calculatedData.add(new CalculatedDataObject("Центральный момент m4", m4Theo, m4Stat));
-        calculatedData.add(new CalculatedDataObject("Ассиметрия случ. в. As", AsTheo, AsStat));
-        calculatedData.add(new CalculatedDataObject("Эксцесс случ. в. Ek", EkTheo, EkStat));
-        calculatedData.add(new CalculatedDataObject("Хи-квадрат chi2", null, chi2));
+        calculatedData.add(new CalculatedDataObject("a1", a1Theo, a1Stat));
+        calculatedData.add(new CalculatedDataObject("m2", m2Theo, m2Stat));
+        calculatedData.add(new CalculatedDataObject("m3", m3Theo, m3Stat));
+        calculatedData.add(new CalculatedDataObject("m4", m4Theo, m4Stat));
+        calculatedData.add(new CalculatedDataObject("As", AsTheo, AsStat));
+        calculatedData.add(new CalculatedDataObject("Ek", EkTheo, EkStat));
+        calculatedData.add(new CalculatedDataObject("chi2", null, chi2));
 
         return calculatedData;
     }
