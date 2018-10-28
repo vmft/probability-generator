@@ -17,13 +17,13 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.psuti.courseproject.gui.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.psuti.courseproject.gui.Controller">
    <children>
       <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <VBox prefHeight="475.0" prefWidth="400.0">
                <children>
-                  <TableView fx:id="dataTable" prefHeight="486.0" prefWidth="400.0">
+                  <TableView fx:id="dataTable" prefHeight="300.0" prefWidth="400.0">
                     <columns>
                       <TableColumn fx:id="labelColumn" editable="false" prefWidth="70.0" text="Значение" />
                       <TableColumn fx:id="theoColumn" editable="false" prefWidth="160.0" text="Теоретические" />
@@ -33,18 +33,6 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
                   </TableView>
-               </children>
-            </VBox>
-            <VBox fx:id="chartVbox" prefHeight="600.0" prefWidth="400.0">
-               <children>
-                  <BarChart fx:id="histogramChart" title="График распределения СВ">
-                    <xAxis>
-                      <CategoryAxis side="BOTTOM" fx:id="xAxis" />
-                    </xAxis>
-                    <yAxis>
-                      <NumberAxis fx:id="yAxis" side="LEFT" />
-                    </yAxis>
-                  </BarChart>
                   <GridPane>
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="150.0" />
@@ -101,6 +89,18 @@
                         </TextField>
                      </children>
                   </GridPane>
+               </children>
+            </VBox>
+            <VBox fx:id="chartVbox" prefHeight="600.0" prefWidth="400.0">
+               <children>
+                  <BarChart fx:id="histogramChart" title="График распределения СВ">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" fx:id="xAxis" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis fx:id="yAxis" side="LEFT" />
+                    </yAxis>
+                  </BarChart>
                </children>
             </VBox>
          </children>
