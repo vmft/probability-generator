@@ -8,9 +8,10 @@ public class ExponentialDistributionGenerator implements Generator {
    // private ExponentialDistribution exponentialDistribution;
     private List<Double> generatedValues;
     private List<CalculatedDataObject> calculatedDataObjects;
-    public static final double LAMBDA=1;
+    public double lambda =0.0;
     private static final int CAPACITY=20;
-    public ExponentialDistributionGenerator() {
+    public ExponentialDistributionGenerator(double lambda) {
+        this.lambda=lambda;
        // exponentialDistribution = new ExponentialDistribution(0.6);
     }
 
@@ -21,7 +22,7 @@ public class ExponentialDistributionGenerator implements Generator {
         double log;
         generatedValues = new ArrayList<>(sampleSize);
         for (int i = 0; i < sampleSize; i++) {
-            log=Math.log(1-random.nextDouble())/(-LAMBDA);
+            log=Math.log(1-random.nextDouble())/(-lambda);
             generatedValues.add(log);
             //generatedValues.add(exponentialDistribution.sample());
         }
@@ -33,10 +34,10 @@ public class ExponentialDistributionGenerator implements Generator {
     public List<CalculatedDataObject> getCalculatedData() {
         calculatedDataObjects=new ArrayList<>(10);
         double mathExpectation=getStatMoment(1);
-        double mathExpectationStat=1/LAMBDA;
-        double m2Stat=1/Math.pow(LAMBDA,2);
-        double m3Stat=2/Math.pow(LAMBDA,3);
-        double m4Stat=9/Math.pow(LAMBDA,4);
+        double mathExpectationStat=1/ lambda;
+        double m2Stat=1/Math.pow(lambda,2);
+        double m3Stat=2/Math.pow(lambda,3);
+        double m4Stat=9/Math.pow(lambda,4);
         double m2= getMoment(2);
         double m3= getMoment(3);
         double m4= getMoment(4);
@@ -68,7 +69,7 @@ public class ExponentialDistributionGenerator implements Generator {
         double upperBound = lowerBound + boundInc;
         int count = 0;
         for (int i = 0; i < CAPACITY; i++) {
-            p.add(Math.pow((Math.E), -(LAMBDA * lowerBound)) - Math.pow((Math.E), -(LAMBDA * upperBound)));
+            p.add(Math.pow((Math.E), -(lambda * lowerBound)) - Math.pow((Math.E), -(lambda * upperBound)));
             lowerBound += boundInc;
             upperBound += boundInc;
         }

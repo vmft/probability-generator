@@ -103,6 +103,11 @@ public class Controller {
                     break;
                 case UNIFORM_DISTRIBUTION:
                     break;
+                case EXPONENTIAL_DISTRIBUTION:
+                    resetParamField();
+                    firstParamTextField.setVisible(true);
+                    firstParamTextField.setPromptText("Лямбда");
+                    break;
                 default:
                     break;
             }
@@ -192,7 +197,12 @@ public class Controller {
                     break;
                 //И СЮДА
                 case EXPONENTIAL_DISTRIBUTION:
-                    ExponentialDistributionGenerator exponentialDistributionGenerator = new ExponentialDistributionGenerator();
+                    if (firstParam<=0){
+                        Alert alert = new Alert(Alert.AlertType.ERROR, "Лямда не может быть меньше или равняться 0");
+                        alert.showAndWait();
+                        return;
+                    }
+                    ExponentialDistributionGenerator exponentialDistributionGenerator = new ExponentialDistributionGenerator(firstParam);
                     setupHistogram(exponentialDistributionGenerator);
                     updateTable(exponentialDistributionGenerator);
                     break;
