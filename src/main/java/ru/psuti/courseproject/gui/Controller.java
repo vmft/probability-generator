@@ -7,11 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
-import ru.psuti.courseproject.core.generator.GammaDistributionGenerator;
-import ru.psuti.courseproject.core.generator.Generator;
-import ru.psuti.courseproject.core.generator.LogNormalDistributionGenerator;
-import ru.psuti.courseproject.core.generator.NormalDistributionGenerator;
-import ru.psuti.courseproject.core.generator.UniformDistributionGenerator;
+import ru.psuti.courseproject.core.generator.*;
 import ru.psuti.courseproject.core.pojo.CalculatedDataObject;
 
 import java.util.HashMap;
@@ -195,6 +191,11 @@ public class Controller {
                     updateTable(gammaDistributionGenerator);
                     break;
                 //И СЮДА
+                case EXPONENTIAL_DISTRIBUTION:
+                    ExponentialDistributionGenerator exponentialDistributionGenerator = new ExponentialDistributionGenerator();
+                    setupHistogram(exponentialDistributionGenerator);
+                    updateTable(exponentialDistributionGenerator);
+                    break;
                 case NORMAL_DISTRIBUTION:
                     NormalDistributionGenerator normalDistributionGenerator = new NormalDistributionGenerator();
                     setupHistogram(normalDistributionGenerator);
